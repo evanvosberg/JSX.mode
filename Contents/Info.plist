@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>SEEMode.JavaScript</string>
+	<string>SEEMode.JSX</string>
 	<key>CFBundleName</key>
-	<string>JavaScript</string>
+	<string>JSX</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2009 TheCodingMonkeys
 http://www.codingmonkeys.de</string>
