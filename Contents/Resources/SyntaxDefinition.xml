@@ -9,13 +9,13 @@
     </head>
 
     <states>
-    
+
        <default id="Base" scope="meta.default">
-       
+
        	 	<keywords id="FunctionRegex" useforautocomplete="no" scope="language.function.js" highlightInOrder="yes">
 				<regex>([\$A-Za-z0-9_]+[ \t]*)\(</regex>
             </keywords>
-       
+
        	 	<keywords id="BuiltInFunctionRegex" useforautocomplete="no" scope="support.function.js" postregex="(?:[ \t]*\()" highlightInOrder="yes">
 				<string>__defineGetter__</string>
 				<string>__defineSetter__</string>
@@ -64,7 +64,7 @@
 				<string>valueOf</string>
 				<string>watch</string>
             </keywords>
-       
+
             <keywords id="Objects" useforautocomplete="yes" scope="support.class.standard.js">
 				<string>Array</string>
 				<string>ArrayBuffer</string>
@@ -92,7 +92,7 @@
 				<string>Proxy</string>
 				<string>RangeError</string>
 				<string>ReferenceError</string>
-				<string>Reflect</string> 
+				<string>Reflect</string>
 				<string>RegExp</string>
 				<string>Set</string>
 				<string>Set</string>
@@ -106,10 +106,10 @@
 				<string>Uint8Array</string>
 				<string>Uint8ClampedArray</string>
 				<string>URIError</string>
-				<string>WeakMap</string> 
+				<string>WeakMap</string>
 				<string>WeakSet</string>
             </keywords>
-            
+
             <keywords id="DOM Element Methods" useforautocomplete="yes" preregex="(?:\.)" postregex="(?:[ \t]*\()" scope="support.method.special">
 				<string>adoptNode</string>
 				<string>blur</string>
@@ -281,7 +281,7 @@
 				<string>width</string>
 				<string>xmlEncoding</string>
 				<string>xmlVersion</string>
-				
+
 				<!-- object properties -->
 				<string>prototype</string>
 				<string>constructor</string>
@@ -371,24 +371,24 @@
             <keywords id="Operators" useforautocomplete="no" scope="language.operator" highlightInOrder="yes">
                 <regex>([\+\-\*\/\=\!\&lt;\&gt;\%&amp;\[\]:]|\|\||\|)</regex>
             </keywords>
-            
+
             <state id="AutodocComment" type="comment" foldable="yes" scope="comment.block.documentation.js">
                 <begin><regex>/\*"</regex></begin>
                 <end><regex>\*/</regex></end>
             </state>
-    
+
             <state id="Comment" type="comment" foldable="yes" scope="comment.block.js">
                 <begin><regex>/\*</regex><autoend>\*/</autoend></begin>
                 <end><regex>\*/</regex></end>
                 <import mode="Base" state="EmailAndURLContainerState" keywords-only="yes"/>
             </state>
-            
+
             <state id="SingleComment" type="comment" scope="comment.line.double-slash.js">
                 <begin><regex>//</regex></begin>
                 <end><regex>[\n\r]</regex></end>
                 <import mode="Base" state="EmailAndURLContainerState" keywords-only="yes"/>
             </state>
-            
+
             <state id="Regular Expressions" type="string" scope="string.regex.js">
                 <!--CODA <begin><regex>(?i)(?&lt;=[=(,:\+~!]|^|return|;|(?:\|\|))\s*/(?![/*+{}?])</regex></begin>-->
                 <begin><regex>(?i)(?&lt;=[=(,:\+~!?\[|]|return|;|=&gt;)\s*/(?![/*+{}?\r\n])</regex></begin>
@@ -396,15 +396,15 @@
 
 				<state id="Escaped Characters" scope="string.regex.escaped.js">
                 	<begin><regex>\\</regex></begin>
-                	<end><regex>.</regex></end>	
+                	<end><regex>.</regex></end>
                 </state>
             </state>
-    
+
             <state id="String" type="string" scope="string.double.js">
                 <begin><regex>"</regex></begin>
                 <end><regex>(?&lt;!\\)(\\\\)*"</regex></end>
             </state>
-    
+
             <state id="SingleString" type="string" scope="string.single.js">
                 <begin><regex>'</regex></begin>
                 <end><regex>(?&lt;!\\)(\\\\)*'</regex></end>
@@ -423,8 +423,12 @@
                 <end><regex>}</regex></end>
                 <import mode="JSX" />
             </state>
-    		
-    
+
+            <state id="Foldable Tags" containerState="yes" delimiterState="Tags" foldBegin="&lt;[ \t]*(?'xmltagstatename'[-:_\.a-zA-Z\d]+)[\s\S]*(?&lt;![/?])>" foldEnd="&lt;\s*/\s*(?i)(?#see-insert-start-group:xmltagstatename)\s*>" foldable="yes" usespellchecking="yes" scope="meta.block.tag">
+                <import keywords-only="yes"/>
+    			<import/>
+    		</state>
+
     		<state id="Tags" usespellchecking="no" foldState="Foldable Tags" scope="markup.tag">
     			<begin>
     				<regex>&lt;\/?(?:[A-Za-z])</regex>
@@ -432,12 +436,12 @@
     			<end>
     				<regex>&gt;</regex>
     			</end>
-    			
+
     			<state id="Strings in Tags" type="string" useforautocomplete="no" scope="string.double.js">
     				<begin><regex>"</regex></begin>
     				<end><regex>"</regex></end>
     			</state>
-    			
+
     			<state id="Single Strings in Tags" type="string" useforautocomplete="no" scope="string.single.js">
     				<begin><regex>'</regex></begin>
     				<end><regex>'</regex></end>
@@ -448,7 +452,7 @@
                     <end><regex>}</regex></end>
                     <import mode="JSX" />
                 </state>
-    			
+
     			<keywords id="Attributes in Tags" useforautocomplete="no" scope="markup.tag.attribute.name">
     				<regex>([\w-]*)(?=[ \t]*=)</regex>
     			</keywords>
