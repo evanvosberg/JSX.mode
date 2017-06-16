@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <recognition>
+        <extension>js</extension>
+        <extension>javascript</extension>
+        <extension>jsx</extension>
+        <extension>json</extension>
+    </recognition>
+    <color>0.927, 0.726, 0.303</color>
+</settings>

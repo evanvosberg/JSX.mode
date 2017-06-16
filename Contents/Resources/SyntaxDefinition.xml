@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE syntax SYSTEM "syntax.dtd">
+<syntax>
+
+    <head>
+        <name>JavaScript</name> <!-- The definitions title -->
+        <charsintokens><![CDATA[_0987654321abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@$]]></charsintokens> <!-- Valid Characters for Variables -->
+        <!-- <charsdelimitingtokens></charsdelimitingtokens> -->
+    </head>
+
+    <states>
+    
+       <default id="Base" scope="meta.default">
+       
+       	 	<keywords id="FunctionRegex" useforautocomplete="no" scope="language.function.js" highlightInOrder="yes">
+				<regex>([\$A-Za-z0-9_]+[ \t]*)\(</regex>
+            </keywords>
+       
+       	 	<keywords id="BuiltInFunctionRegex" useforautocomplete="no" scope="support.function.js" postregex="(?:[ \t]*\()" highlightInOrder="yes">
+				<string>__defineGetter__</string>
+				<string>__defineSetter__</string>
+				<string>__lookupGetter__</string>
+				<string>__lookupSetter__</string>
+				<string>assign</string>
+				<string>constructor</string>
+				<string>create</string>
+				<string>decodeURI</string>
+				<string>decodeURIComponent</string>
+				<string>defineProperties</string>
+				<string>defineProperty</string>
+				<string>encodeURI</string>
+				<string>encodeURIComponent</string>
+				<string>escape</string>
+				<string>eval</string>
+				<string>freeze</string>
+				<string>getf</string>
+				<string>getNotifier</string>
+				<string>getOwnPropertyDescriptor</string>
+				<string>getOwnPropertyNames</string>
+				<string>getOwnPropertySymbols</string>
+				<string>hasOwnProperty</string>
+				<string>is</string>
+				<string>isExtensible</string>
+				<string>isf</string>
+				<string>isFinite</string>
+				<string>isFrozen</string>
+				<string>isNaN</string>
+				<string>isSealed</string>
+				<string>keys</string>
+				<string>observe</string>
+				<string>parseFloat</string>
+				<string>parseInt</string>
+				<string>preventExtensions</string>
+				<string>propertyIsEnumerable</string>
+				<string>seal</string>
+				<string>setf</string>
+				<string>toLocaleString</string>
+				<string>toSource</string>
+				<string>toString</string>
+				<string>unescape</string>
+				<string>uneval</string>
+				<string>unobserve</string>
+				<string>unwatch</string>
+				<string>valueOf</string>
+				<string>watch</string>
+            </keywords>
+       
+            <keywords id="Objects" useforautocomplete="yes" scope="support.class.standard.js">
+				<string>Array</string>
+				<string>ArrayBuffer</string>
+				<string>Boolean</string>
+				<string>DataView</string>
+				<string>Date</string>
+				<string>Error</string>
+				<string>EvalError</string>
+				<string>Float32Array</string>
+				<string>Float64Array</string>
+				<string>Function</string>
+				<string>Generator</string>
+				<string>GeneratorFunction</string>
+				<string>Int16Array</string>
+				<string>Int32Array</string>
+				<string>Int8Array</string>
+				<string>InternalError</string>
+				<string>Intl</string>
+				<string>JSON</string>
+				<string>Map</string>
+				<string>Math</string>
+				<string>Number</string>
+				<string>Object</string>
+				<string>Promise</string>
+				<string>Proxy</string>
+				<string>RangeError</string>
+				<string>ReferenceError</string>
+				<string>Reflect</string> 
+				<string>RegExp</string>
+				<string>Set</string>
+				<string>Set</string>
+				<string>SIMD</string>
+				<string>String</string>
+				<string>Symbol</string>
+				<string>SyntaxError</string>
+				<string>TypeError</string>
+				<string>Uint16Array</string>
+				<string>Uint32Array</string>
+				<string>Uint8Array</string>
+				<string>Uint8ClampedArray</string>
+				<string>URIError</string>
+				<string>WeakMap</string> 
+				<string>WeakSet</string>
+            </keywords>
+            
+            <keywords id="DOM Element Methods" useforautocomplete="yes" preregex="(?:\.)" postregex="(?:[ \t]*\()" scope="support.method.special">
+				<string>adoptNode</string>
+				<string>blur</string>
+				<string>caretPositionFromPoint</string>
+				<string>clear</string>
+				<string>click</string>
+				<string>close</string>
+				<string>closest</string>
+				<string>createAttribute</string>
+				<string>createCDATASection</string>
+				<string>createComment</string>
+				<string>createDocumentFragment</string>
+				<string>createElement</string>
+				<string>createEntityReference</string>
+				<string>createEvent</string>
+				<string>createExpression</string>
+				<string>createNodeIterator</string>
+				<string>createNSResolver</string>
+				<string>createProcessingInstruction</string>
+				<string>createRange</string>
+				<string>createTextNode</string>
+				<string>createTreeWalker</string>
+				<string>elementFromPoint</string>
+				<string>enableStyleSheetsForSet</string>
+				<string>evaluate</string>
+				<string>execCommand</string>
+				<string>exitPointerLock</string>
+				<string>focus</string>
+				<string>getAttribute</string>
+				<string>getAttributeNode</string>
+				<string>getBoundingClientRect</string>
+				<string>getBoxObjectFor</string>
+				<string>getClientRects</string>
+				<string>getElementById</string>
+				<string>getElementsByClassName</string>
+				<string>getElementsByName</string>
+				<string>getElementsByTagName</string>
+				<string>getSelection</string>
+				<string>hasAttribute</string>
+				<string>hasAttributeNS</string>
+				<string>hasAttributes</string>
+				<string>hasFocus</string>
+				<string>importNode</string>
+				<string>insertAdjacentHTML</string>
+				<string>loadOverlay</string>
+				<string>matches</string>
+				<string>mozCancelFullScreen</string>
+				<string>mozSetImageElement</string>
+				<string>open</string>
+				<string>queryCommandSupported</string>
+				<string>querySelector</string>
+				<string>querySelectorAll</string>
+				<string>registerElement</string>
+				<string>releaseCapture</string>
+				<string>removeAttribute</string>
+				<string>removeAttributeNode</string>
+				<string>requestFullscreen</string>
+				<string>requestPointerLock</string>
+				<string>scrollIntoView</string>
+				<string>scrollTopMax</string>
+				<string>setAttribute</string>
+				<string>setAttributeNode</string>
+				<string>setCapture</string>
+				<string>write</string>
+				<string>writeln</string>
+            </keywords>
+
+            <keywords id="DOM Element Properties" useforautocomplete="yes" preregex="(?:\.)" postregex="[ \t]*(?![\(\{\[])\b" scope="support.method.special">
+				<string>accessKey</string>
+				<string>activeElement</string>
+				<string>alinkColor</string>
+				<string>anchors</string>
+				<string>applets</string>
+				<string>async</string>
+				<string>attributes</string>
+				<string>bgColor</string>
+				<string>body</string>
+				<string>characterSet</string>
+				<string>childElementCount</string>
+				<string>children</string>
+				<string>classList</string>
+				<string>className</string>
+				<string>clientHeight</string>
+				<string>clientLeft</string>
+				<string>clientTop</string>
+				<string>clientWidth</string>
+				<string>compatMode</string>
+				<string>contentEditable</string>
+				<string>contentType</string>
+				<string>currentScript</string>
+				<string>dataset</string>
+				<string>defaultView</string>
+				<string>designMode</string>
+				<string>dir</string>
+				<string>dir</string>
+				<string>doctype</string>
+				<string>documentElement</string>
+				<string>documentURI</string>
+				<string>documentURIObject</string>
+				<string>domain</string>
+				<string>domConfig</string>
+				<string>embeds</string>
+				<string>fgColor</string>
+				<string>firstChild</string>
+				<string>firstElementChild</string>
+				<string>forms</string>
+				<string>head</string>
+				<string>height</string>
+				<string>id</string>
+				<string>images</string>
+				<string>implementation</string>
+				<string>innerHTML</string>
+				<string>inputEncoding</string>
+				<string>isContentEditable</string>
+				<string>lang</string>
+				<string>lastElementChild</string>
+				<string>lastModified</string>
+				<string>lastStyleSheetSet</string>
+				<string>length</string>
+				<string>linkColor</string>
+				<string>links</string>
+				<string>location</string>
+				<string>mozFullScreen</string>
+				<string>mozFullScreenElement</string>
+				<string>mozFullScreenEnabled</string>
+				<string>mozSyntheticDocument</string>
+				<string>name</string>
+				<string>namespaceURI</string>
+				<string>nodePrincipal</string>
+				<string>offsetHeight</string>
+				<string>offsetLeft</string>
+				<string>offsetParent</string>
+				<string>offsetTop</string>
+				<string>offsetWidth</string>
+				<string>onafterscriptexecute</string>
+				<string>onbeforescriptexecute</string>
+				<string>oncopy</string>
+				<string>oncut</string>
+				<string>onoffline</string>
+				<string>ononline</string>
+				<string>onpaste</string>
+				<string>onwheel</string>
+				<string>origin</string>
+				<string>outerHTML</string>
+				<string>plugins</string>
+				<string>pointerLockElement</string>
+				<string>popupNode</string>
+				<string>preferredStyleSheetSet</string>
+				<string>readyState</string>
+				<string>referrer</string>
+				<string>scripts</string>
+				<string>scrollHeight</string>
+				<string>scrollLeft</string>
+				<string>scrollLeftMax</string>
+				<string>scrollTop</string>
+				<string>scrollWidth</string>
+				<string>selectedStyleSheetSet</string>
+				<string>style</string>
+				<string>styleSheets</string>
+				<string>styleSheetSets</string>
+				<string>tabIndex</string>
+				<string>tagName</string>
+				<string>textContent</string>
+				<string>title</string>
+				<string>title</string>
+				<string>tooltipNode</string>
+				<string>URL</string>
+				<string>vlinkColor</string>
+				<string>width</string>
+				<string>xmlEncoding</string>
+				<string>xmlVersion</string>
+				
+				<!-- object properties -->
+				<string>prototype</string>
+				<string>constructor</string>
+			</keywords>
+
+            <keywords id="Keywords" useforautocomplete="yes" scope="keyword.control.js">
+                <string>arguments</string>
+				<string>as</string>
+				<string>break</string>
+                <string>case</string>
+                <string>catch</string>
+                <string>const</string>
+                <string>continue</string>
+                <string>debugger</string>
+                <string>default</string>
+                <string>delete</string>
+                <string>do</string>
+                <string>else</string>
+				<string>eval</string>
+				<string>export</string>
+                <string>extends</string>
+                <string>final</string>
+                <string>finally</string>
+                <string>for</string>
+                <string>from</string>
+                <string>function</string>
+                <string>goto</string>
+                <string>if</string>
+                <string>implements</string>
+                <string>import</string>
+                <string>in</string>
+                <string>instanceof</string>
+                <string>interface</string>
+				<string>let</string>
+                <string>native</string>
+                <string>new</string>
+                <string>of</string>
+                <string>package</string>
+				<string>private</string>
+                <string>protected</string>
+                <string>public</string>
+                <string>return</string>
+                <string>static</string>
+                <string>super</string>
+                <string>switch</string>
+                <string>synchronized</string>
+                <string>this</string>
+                <string>throw</string>
+                <string>transient</string>
+                <string>try</string>
+                <string>typeof</string>
+                <string>var</string>
+                <string>volatile</string>
+                <string>while</string>
+                <string>with</string>
+				<string>yield</string>
+            </keywords>
+
+            <keywords id="Types" useforautocomplete="yes" scope="keyword.type.js">
+                <string>any</string>
+                <string>boolean</string>
+                <string>byte</string>
+                <string>char</string>
+                <string>class</string>
+                <string>double</string>
+                <string>enum</string>
+                <string>float</string>
+                <string>int</string>
+                <string>long</string>
+                <string>short</string>
+                <string>void</string>
+            </keywords>
+
+            <keywords id="Numbers" inverted-color="#5d56ff" useforautocomplete="no" scope="constant.numeric.js">
+				<regex>(?&lt;![\w\d\._])((?:(?:(?:[0-9]+\.[0-9]*)|(\.[0-9]+))(?:[eE][+\-]?[0-9]+)?[fFlL]?)|(?:(?:(?:[1-9][0-9]*)|0(?:[1-7][0-7]*)?|(?:0[xX][0-9a-fA-F]+))(?:(?:[uU][lL]?)|(?:[lL][uU]?))?))(?![\w\d\._])</regex>
+            </keywords>
+
+            <keywords id="Number Literals" inverted-color="#5d56ff" useforautocomplete="YES" scope="constant.numeric.keyword.js">
+                <string>true</string>
+                <string>false</string>
+                <string>null</string>
+                <string>NaN</string>
+                <string>infinity</string>
+                <string>undefined</string>
+            </keywords>
+
+            <keywords id="Operators" useforautocomplete="no" scope="language.operator" highlightInOrder="yes">
+                <regex>([\+\-\*\/\=\!\&lt;\&gt;\%&amp;\[\]:]|\|\||\|)</regex>
+            </keywords>
+            
+            <state id="AutodocComment" type="comment" foldable="yes" scope="comment.block.documentation.js">
+                <begin><regex>/\*"</regex></begin>
+                <end><regex>\*/</regex></end>
+            </state>
+    
+            <state id="Comment" type="comment" foldable="yes" scope="comment.block.js">
+                <begin><regex>/\*</regex><autoend>\*/</autoend></begin>
+                <end><regex>\*/</regex></end>
+                <import mode="Base" state="EmailAndURLContainerState" keywords-only="yes"/>
+            </state>
+            
+            <state id="SingleComment" type="comment" scope="comment.line.double-slash.js">
+                <begin><regex>//</regex></begin>
+                <end><regex>[\n\r]</regex></end>
+                <import mode="Base" state="EmailAndURLContainerState" keywords-only="yes"/>
+            </state>
+            
+            <state id="Regular Expressions" type="string" scope="string.regex.js">
+                <!--CODA <begin><regex>(?i)(?&lt;=[=(,:\+~!]|^|return|;|(?:\|\|))\s*/(?![/*+{}?])</regex></begin>-->
+                <begin><regex>(?i)(?&lt;=[=(,:\+~!?\[|]|return|;|=&gt;)\s*/(?![/*+{}?\r\n])</regex></begin>
+                <end><regex>/[cgimosx]*</regex></end>
+
+				<state id="Escaped Characters" scope="string.regex.escaped.js">
+                	<begin><regex>\\</regex></begin>
+                	<end><regex>.</regex></end>	
+                </state>
+            </state>
+    
+            <state id="String" type="string" scope="string.double.js">
+                <begin><regex>"</regex></begin>
+                <end><regex>(?&lt;!\\)(\\\\)*"</regex></end>
+            </state>
+    
+            <state id="SingleString" type="string" scope="string.single.js">
+                <begin><regex>'</regex></begin>
+                <end><regex>(?&lt;!\\)(\\\\)*'</regex></end>
+            </state>
+
+	 		<state id="TemplateString" type="string" scope="string.template.js">
+                <begin><regex>`</regex></begin>
+                <end><regex>(?&lt;!\\)(\\\\)*`</regex></end>
+                 <keywords id="Interpolation" useforautocomplete="no" scope="language.variable.string.js">
+                	<regex>(\$\{[^\}]*?\})</regex>
+                 </keywords>
+            </state>
+
+            <state id="Block" type="block" foldable="yes" indent="yes" scope="meta.block.curly">
+                <begin><regex>{</regex><autoend>}</autoend></begin>
+                <end><regex>}</regex></end>
+                <import mode="JavaScript" />
+            </state>
+
+        </default>
+
+    </states>
+
+</syntax>
