@@ -431,7 +431,7 @@
 
             <state id="StatementTags" usespellchecking="no" foldState="Foldable Tags" scope="keyword.control.js">
     			<begin>
-    				<regex>&lt;\/?(?:If|Choose|When|Otherwise|For)</regex>
+    				<regex>&lt;\/?(?:If|Choose|When|Otherwise|For|With)</regex>
     			</begin>
     			<end>
     				<regex>&gt;</regex>
