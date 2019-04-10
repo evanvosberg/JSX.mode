@@ -8,12 +8,12 @@ A [React/JSX](https://facebook.github.io/react/) syntax mode for [Coda 2](https:
 ## Installation (non Mac App Store version)
 
     cd ~/Library/Application\ Support/Coda\ 2/Modes
-    git clone git@github.com:evanvosberg/JSX.mode
+    git clone https://github.com/evanvosberg/JSX.mode.git
     
 ## Installation (Mac App Store version)
 
     cd ~/Library/Containers/com.panic.Coda2/Data/Library/Application\ Support/Coda\ 2/Modes
-    git clone git@github.com:evanvosberg/JSX.mode
+    git clone https://github.com/evanvosberg/JSX.mode.git
     
 Remember that if you have a Modes directory you should move that aside in order to use
 this new one.
